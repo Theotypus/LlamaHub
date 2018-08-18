@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Exemples>
+
+<!-- COMMAND FROM SERVER TO CLIENT 
+(Only one command per document) -->
+
+  <Response Success="bool" Command="type" Id="user_id" />
+  <!-- EX : 
+  <Response Success="true" Command="LogIn" Id="42" /> 
+  -->
+
+  
+  <Error Command="type">
+    ERROR MESSAGE
+  </Error>
+  <!-- EX : 
+  <Error Command="SignUp"> 
+    SOMETHING'S FUCKED UP 
+  </Error> -->
+  
+  
+  <Message Conversation="id" Sender="user" Time="unix_time">
+    TEXT
+  </Message>
+  <!-- EX : 
+  <Message Conversation="cacb059aa21311e886f77824afcab585" Sender="43" Time="1534506652.5181339">
+    TEXT
+  </Message> -->
+
+  
+  <NewConversation Name=".." Id="..." Creator="id" Time="...">
+    <Participant Id ="..." Username="..." />
+    <!--- ... -->
+    <Image>IMAGE</Image>
+  </NewConversation>
+   <!-- EX : 
+  <NewConversation Name="Llamapoual" Id="cacb059aa21311e886f77824afcab585" Creator="95" Time="1534506652.5181339">
+    <Participant Id ="42" Username="A random name" />
+    ...
+    <Image>IMAGE DATA (byte array)</Image>
+  </NewConversation> -->
+
+  
+  <Search>
+    <Result Id="..." Username="..." />
+    <!--- ... -->
+  </Search>
+  <!-- EX : 
+  <Search>
+    <Result Id="11" Username="twelve" />
+    ...
+  </Search> -->
+  
+  
+  
+  <UserLeft Conversation="id" User="id" Time="..." />
+  <!-- EX : 
+  <UserLeft Conversation="cacb059aa21311e886f77824afcab585" User="42" Time="1534506652.5181339" />
+  -->
+  
+  
+  
+  <ChangeName Conversation="id" Time="..." User="id">
+    NAME
+  </ChangeName>
+  <!-- EX : 
+  <ChangeName Conversation="cacb059aa21311e886f77824afcab585" Time="1534506652.5181339" User="42">
+    A NEW RANDOM NAME
+  </ChangeName>-->
+  
+
+  <Add Conversation="id" Id="id_user_added" Username="..." AddedBy="..." Time="..."/>
+  <!-- EX : 
+  <Add Conversation="cacb059aa21311e886f77824afcab585" Id="42" Username="..." AddedBy="158" Time="1534506652.5181339"/>
+  -->
+
+
+
+
+
+  
+  
+  <!-- COMMAND FROM CLIENT TO SERVER  -->
+  
+  <SignUp Username="..." Password="..."/>
+
+  
+  <LogIn Username="..." Password="..." Last="time_last_message_received"/>
+  
+    
+  <Message Conversation="id">
+    TEXT
+  </Message>
+
+  
+  <NewConversation Name="...">
+    <Participant Id="..."/>
+    <!--- ... -->
+    <Image>IMAGE (byte array)</Image>
+  </NewConversation>
+
+  
+  <Search>
+    REQUEST
+  </Search>
+  <!-- EX : 
+  <Search>
+    La vie
+  </Search>-->
+  
+    
+  <Leave Conversation="id" />
+  
+
+  <ChangeName Conversation="id">
+    NAME
+  </ChangeName>
+  
+  
+  <Add Conversation="id" User="id" />
+
+
+</Exemples>  

@@ -1,0 +1,8 @@
+D:\Documents\Programation\Llama\LlamaHub\LlamaHub\LCP_API\obj\Debug\LCP_API.csproj.CoreCompileInputs.cache
+D:\Documents\Programation\Llama\LlamaHub\LlamaHub\LCP_API\bin\Debug\LCP_API.dll
+D:\Documents\Programation\Llama\LlamaHub\LlamaHub\LCP_API\bin\Debug\LCP_API.pdb
+D:\Documents\Programation\Llama\LlamaHub\LlamaHub\LCP_API\bin\Debug\LiteDB.dll
+D:\Documents\Programation\Llama\LlamaHub\LlamaHub\LCP_API\bin\Debug\LiteDB.xml
+D:\Documents\Programation\Llama\LlamaHub\LlamaHub\LCP_API\obj\Debug\LCP_API.csproj.CopyComplete
+D:\Documents\Programation\Llama\LlamaHub\LlamaHub\LCP_API\obj\Debug\LCP_API.dll
+D:\Documents\Programation\Llama\LlamaHub\LlamaHub\LCP_API\obj\Debug\LCP_API.pdb

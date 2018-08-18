@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Hub.TabMessage.ConversationMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hub.TabMessage"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="250">
+
+    <UserControl.Resources>
+        <BitmapImage x:Key="EditIcon" UriSource="Icons/EditIcon.png" />
+    </UserControl.Resources>
+
+    <Grid  Width="250" Background="#e6e6e6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="40" />
+        </Grid.ColumnDefinitions>
+
+        <Border  Width="250" Height="250" Background="#FF00994D"  Grid.ColumnSpan="2">
+            <Image Source="{Binding Image}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+        <TextBlock Name="ConvName" Text="{Binding Name}" Foreground="White" FontSize="18" FontWeight="Bold" Margin="20, 10"  Grid.ColumnSpan="2"/>
+
+        <Button Grid.Column="1" Click="Edit_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0" Width="30" Height="30" BorderBrush="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="{StaticResource EditIcon}" />
+            </Button.Background>
+        </Button>
+
+        <ListBox Grid.Row="1" ItemsSource="{Binding Participants}" Name="ConvUser" Background="{x:Null}" BorderBrush="{x:Null}"  Grid.ColumnSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel Orientation="Horizontal">
+                        <Ellipse Width="25" Height="25" Margin="10, 5" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <Ellipse.Fill>
+                                <SolidColorBrush Color="#FF00994D"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <TextBlock Text="{Binding Username}" FontSize="16" FontWeight="Normal" Margin="5" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Grid.Row="2" Click="Leave_Click" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Left" Grid.ColumnSpan="2">
+            <StackPanel Height="40" Orientation="Horizontal">
+                <Image Source="Icons/LeaveIcon.png" Width="25" Margin="0, 0, 10, 0"/>
+                <TextBlock Text="Leave" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</UserControl>
